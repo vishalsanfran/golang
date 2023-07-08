@@ -16,5 +16,5 @@ GET /videos : Get all videos
 POST /videos ({duration: int, title: string, category: string}) : Create a video
 
 3. algo/
+----------------------
 Assorted collection of algorithms.
-

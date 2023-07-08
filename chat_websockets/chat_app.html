@@ -22,7 +22,7 @@
                 $("#chatbox").submit(function(){
                   if (!msgBox.val()) return false;
                   if (!socket) {
-                    alert("Error: There is no socket connection.");
+                    alert("Error: No socket connection.");
                     return false;
                   }
                   socket.send(msgBox.val());
@@ -30,9 +30,9 @@
                   return false;
                 });
                 if (!window["WebSocket"]) {
-                  alert("Error: Your browser does not support web  sockets.")
+                  alert("Error: Web sockets not supported in browser.")
                 } else {
-                  socket = new WebSocket("ws://localhost:8080/room");
+                  socket = new WebSocket("ws://localhost:8080/group");
                   socket.onclose = function() {
                     alert("Connection has been closed.");
                   }

@@ -44,7 +44,7 @@ const (
 	writeSize = 256
 )
 
-var upgrader = &websocket.Upgrader{ReadBufferSize: readSize, WriteBufferSize: writeSize}
+var upgrader = &websocket.Upgrader{ReadBufferSize: readSize, WriteBufferSize: readSize}
 
 func (g *group) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	conn, err := upgrader.Upgrade(w, req, nil)
